@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Serial Test</title>
+  <link rel="stylesheet" type="text/css" href="./main.css">
+  <style type="text/css">
+  </style>
+  
+</head>
+<body>
+  <div class="container">				
+  
+  
+  <div id="testDiv"></div>
+  <!-- <canvas id="audioVisualizer"></canvas> -->
+  <div id="audioVisualizer" class="grid">
+    <canvas id=""></canvas>
+  </div>
+  
+  <div id="controls">
+  
+  <!-- gain ctrl -->
+  <div class="ctrlOverWrap disabled">
+    <div class="ctrl_wrapper">
+      <input id="gainCtrl_rng" disabled type="range" class="vranger" min="0" max="100"/>
+      <input id="gainCtrl_inp" disabled type="text" class="val" placeholder="value 0<->1">
+    </div>
+    <p class="ctrl_name">GAIN</p>
+  </div>
+
+
+  <!-- frequency ctrl ( range & input for better precision )-->
+  <div class="ctrlOverWrap">
+    <div class="ctrl_wrapper">
+      <input id="oscillatorFreqCtrl_rng" type="range" class="vranger" min="20" max="20000"/>
+      <input id="oscillatorFreqCtrl_inp" type="text" class="val" placeholder= "value 0<->1">
+    </div>
+    <p class="ctrl_name">FREQ</p>
+  </div>
+  
+  
+  <!-- fftSize ctrl ( range & input for better precision )-->
+  <div class="ctrlOverWrap">
+    <div class="ctrl_wrapper">
+      <input id="fftSizeCtrl_rng" type="range" class="vranger" min="256" max="4096"/>
+      <input id="fftSizeCtrl_inp" type="text" class="val" placeholder= "value 0<->1">
+    </div>
+    <p class="ctrl_name">FFT</p>
+  </div>
+  
+  
+  <!-- audio ( speaker ) out put toggle -->
+  <div class="radioCtrlOverWrap">
+  <div class="radioCtrl_wrapper">
+    <!--
+    <input type="radio" name="audioOutput" value="on" checked> On<br>
+    <input type="radio" name="audioOutput" value="off"> Off <br>
+    -->
+    <input type="radio" name="audioOutput" value="on" checked id="audioOn"> <label for="audioOn">On</label><!--<div class="check"></div>--><br>
+    <input type="radio" name="audioOutput" value="off" id="audioOff"> <label for="audioOff">Off</label><!--<div class="check"><div class="inside"></div></div>--> <br>
+    <p class="ctrl_name">SPK</p>
+  </div>
+  
+  <!-- audio source change ( oscillator, microphone, or audioSerial ) -->
+  <div class="radioCtrl_wrapper">
+    <input type="radio" name="audioSource" value="oscillator" checked id="oscillatorSrc"> <label for="oscillatorSrc">Oscillator</label><br>
+    <input type="radio" name="audioSource" value="microphone" id="mikeSrc"> <label for="mikeSrc">Microphone</label> <br>
+    <input type="radio" name="audioSource" value="serial" id="serialSrc"> <label for="serialSrc">Audio Serial</label><br>
+    <p class="ctrl_name">SRC</p>
+  </div>
+  </div> <!-- / radioCtrlOverWrap -->
+  
+  </div> <!-- /controls -->
+  
+  
+  <!-- ruler scale & controls for visualizer grid squares -->
+  
+  <!-- quick console -->
+   <div id="console">
+     <pre class="logs">
+initialized!
+     </pre>
+     <textarea id="consoleInput" type="text" class="" placeholder= ">"></textarea>
+   </div>
+  
+  
+ 
+  <!-- <script src="./wipAudioTesting.js"></script> --> <!-- audio wip interesting stuff -->
+  <script src="testing.js"></script> <!-- audio wip test script -->
+  
+  <script type="text/javascript">
+  (function(){
+    /*console.log('wtf ?!');*/
+  })();
+  </script>
+  
+  <!-- <script src="./AudioSerialTest.js"></script> -->  
+</body>
+</html>
